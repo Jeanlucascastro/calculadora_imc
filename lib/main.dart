@@ -114,7 +114,11 @@ class _HomeState extends State<Home> {
                 child: Container(
                   height: 50.0,
                   child: ElevatedButton(
-                    onPressed: _calculate,
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        _calculate();
+                      }
+                    },
                     style:
                         ElevatedButton.styleFrom(backgroundColor: Colors.green),
                     child: const Text(
